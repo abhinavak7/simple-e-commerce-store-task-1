@@ -1,0 +1,225 @@
+{
+  "kind": "build_request",
+  "title": "Simple E-commerce Store (Products, Cart, Checkout, Orders, Internet Identity Login)",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Implement backend data models and persistence for products, carts, and orders in the single Motoko main actor, including create/read/update operations needed by the storefront (products list, product details, cart contents, and order creation).",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Build a basic e-commerce site with product listings.",
+          "Add features like: ● Shopping cart ● Product details page ● Order processing",
+          "Database for storing products, users, and orders"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend can return a list of products and a single product by ID",
+        "Backend stores user cart state and supports add/update quantity/remove for a product",
+        "Backend can create an order from the current cart and persist it",
+        "All state is stored within the single main Motoko actor (no external DB)"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Provide backend query/update methods for product listing and product detail retrieval, including a minimal seed set of products so the UI can be demonstrated without manual backend entry.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Build a basic e-commerce site with product listings."
+        ]
+      },
+      "acceptanceCriteria": [
+        "At least 6 products appear in the product list on a fresh deploy (seeded data)",
+        "Each product has: id, name, price, description, and an image URL/path field (may point to a static placeholder asset)"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement user authentication using Internet Identity on the frontend and use the authenticated principal on the backend to associate carts and orders with a user (no third-party auth providers).",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "User registration/login"
+        ]
+      },
+      "acceptanceCriteria": [
+        "User can sign in and sign out using Internet Identity",
+        "Cart and orders are scoped to the signed-in user principal",
+        "When signed out, the app clearly indicates that login is required for checkout/order placement"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create a storefront UI with a product listings page that displays products from the backend, including basic sorting or filtering controls (e.g., by price or name) and a link to each product’s details page.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Build a basic e-commerce site with product listings.",
+          "● Product details page"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Product list is fetched via React Query and renders name, price, and thumbnail image",
+        "Clicking a product navigates to a product details route/page",
+        "A loading state and error state are shown for product list fetching"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Create a product details page that loads a product by ID from the backend and allows adding the product to the shopping cart with a chosen quantity.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "● Product details page",
+          "● Shopping cart"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Product details page shows name, price, description, and image",
+        "User can select quantity and add to cart",
+        "After adding to cart, the cart UI reflects the updated quantity"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Implement a shopping cart UI that supports viewing cart items, updating quantities, removing items, and showing an order summary (subtotal and total). Cart state must be persisted via the backend per authenticated user.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "● Shopping cart",
+          "Database for storing products, users, and orders"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Cart page/drawer displays all items with quantity controls and remove buttons",
+        "Subtotal/total updates correctly when quantities change",
+        "Refreshing the page retains cart contents for the logged-in user (loaded from backend)"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Implement a checkout and order processing flow that creates an order record in the backend from the current cart, clears the cart on success, and presents an order confirmation view with order ID and summary.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "● Order processing"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Checkout requires the user to be logged in",
+        "Placing an order creates a persisted order associated with the user principal",
+        "On successful order creation, the cart is cleared and an order confirmation is shown",
+        "Order creation errors are displayed with a retry option"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Add an account area where a logged-in user can view their past orders (order list) and open an order detail view showing line items, totals, and timestamps.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Database for storing products, users, and orders"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Orders list loads only the authenticated user’s orders",
+        "Order detail displays items, quantities, prices, and totals",
+        "Signed-out users cannot access order history (prompt to log in)"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Apply a cohesive visual theme across the frontend (typography, spacing, color system, component styling) suitable for a modern minimal online store; avoid blue/purple as primary brand colors.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Simple E-commerce Store"
+        ]
+      },
+      "acceptanceCriteria": [
+        "UI uses a consistent theme across header, product cards, buttons, forms, and cart/checkout",
+        "Primary brand colors are not blue or purple",
+        "Pages are responsive for mobile and desktop"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Add generated static image assets (logo, hero/banner, and a reusable product placeholder) into frontend/public/assets/generated and wire them into the UI where appropriate (header/landing/listing placeholders).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Build a basic e-commerce site with product listings."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated images exist under frontend/public/assets/generated with the specified filenames",
+        "Header uses the generated logo",
+        "Storefront uses the banner on the main listing page (or top of layout)",
+        "Products without specific images use the product placeholder image"
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must be implemented in Motoko as a single-actor canister (backend/main.mo).",
+    "Frontend must be implemented in React + TypeScript with Tailwind and React Query (no vanilla HTML/CSS/JS-only implementation).",
+    "Authentication must use Internet Identity (no Django/Express auth, no third-party auth providers).",
+    "Do not edit files under frontend/src/components/ui or other immutablePaths; compose them instead."
+  ],
+  "nonGoals": [
+    "Payments integration (Stripe/credit card processing) is out of scope; checkout only creates an order record.",
+    "Admin dashboard for managing products is out of scope (products are seeded in code).",
+    "External database integration is out of scope; all persistence is within the canister state."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Minimalist storefront wordmark logo, warm neutral palette (store-logo.dim_512x256.png)",
+      "Wide hero banner with abstract shopping shapes, warm neutral palette (store-hero-banner.dim_1600x500.png)",
+      "Clean product placeholder image with simple box outline and subtle pattern (product-placeholder.dim_800x800.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [
+      "Use English for all user-facing text."
+    ],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

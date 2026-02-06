@@ -1,0 +1,143 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build a simple e-commerce store with a vanilla HTML/CSS/JavaScript frontend and a backend in either Django (Python) or Express.js (Node.js), including product listings, product details, shopping cart, order processing, user authentication, and a database for products/users/orders.",
+  "architectural_notes": [
+    "Frontend will be built with plain HTML/CSS/JavaScript (no framework specified).",
+    "Backend technology choice is either Django (Python) or Express.js (Node.js).",
+    "Use a database to persist products, users, and orders."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Minimalist storefront wordmark logo, warm neutral palette (store-logo.dim_512x256.png)\n- Wide hero banner with abstract shopping shapes, warm neutral palette (store-hero-banner.dim_1600x500.png)\n- Clean product placeholder image with simple box outline and subtle pattern (product-placeholder.dim_800x800.png)",
+  "existing_features": [
+    {
+      "id": "feature-implement-user-authentication-using-internet-identity-on-the-frontend-and-use-the-authenticated-principal-on-the-backend-to-associate-carts-and-orders-with-a-user-no-third-party-auth-providers",
+      "title": "Implement user authentication using Internet Identity on the frontend and use the authenticated principal on the backend to associate carts and orders with a user (no third-party auth providers).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-storefront-ui-with-a-product-listings-page-that-displays-products-from-the-backend-including-basic-sorting-or-filtering-controls-e-g-by-price-or-name-and-a-link-to-each-product-s-details-page",
+      "title": "Create a storefront UI with a product listings page that displays products from the backend, including basic sorting or filtering controls (e.g., by price or name) and a link to each product’s details page.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-product-details-page-that-loads-a-product-by-id-from-the-backend-and-allows-adding-the-product-to-the-shopping-cart-with-a-chosen-quantity",
+      "title": "Create a product details page that loads a product by ID from the backend and allows adding the product to the shopping cart with a chosen quantity.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-shopping-cart-ui-that-supports-viewing-cart-items-updating-quantities-removing-items-and-showing-an-order-summary-subtotal-and-total-cart-state-must-be-persisted-via-the-backend-per-authenticated-user",
+      "title": "Implement a shopping cart UI that supports viewing cart items, updating quantities, removing items, and showing an order summary (subtotal and total). Cart state must be persisted via the backend per authenticated user.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-checkout-and-order-processing-flow-that-creates-an-order-record-in-the-backend-from-the-current-cart-clears-the-cart-on-success-and-presents-an-order-confirmation-view-with-order-id-and-summary",
+      "title": "Implement a checkout and order processing flow that creates an order record in the backend from the current cart, clears the cart on success, and presents an order confirmation view with order ID and summary.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-account-area-where-a-logged-in-user-can-view-their-past-orders-order-list-and-open-an-order-detail-view-showing-line-items-totals-and-timestamps",
+      "title": "Add an account area where a logged-in user can view their past orders (order list) and open an order detail view showing line items, totals, and timestamps.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-visual-theme-across-the-frontend-typography-spacing-color-system-component-styling-suitable-for-a-modern-minimal-online-store-avoid-blue-purple-as-primary-brand-colors",
+      "title": "Apply a cohesive visual theme across the frontend (typography, spacing, color system, component styling) suitable for a modern minimal online store; avoid blue/purple as primary brand colors.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-static-image-assets-logo-hero-banner-and-a-reusable-product-placeholder-into-frontend-public-assets-generated-and-wire-them-into-the-ui-where-appropriate-header-landing-listing-placeholders",
+      "title": "Add generated static image assets (logo, hero/banner, and a reusable product placeholder) into frontend/public/assets/generated and wire them into the UI where appropriate (header/landing/listing placeholders).",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Product listings page with products pulled from backend/database",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Product details page for individual products",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Shopping cart (add/remove/update quantities)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Order processing/checkout flow that creates orders in the database",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "User registration and login (authentication)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Database schema/storage for products, users, and orders",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Backend API/service layer implemented with Django or Express.js",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Implement backend data models and persistence for products, carts, and orders in the single Motoko main actor, including create/read/update operations needed by the storefront (products list, product details, cart contents, and order creation).",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Provide backend query/update methods for product listing and product detail retrieval, including a minimal seed set of products so the UI can be demonstrated without manual backend entry.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Simple E-commerce Store",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

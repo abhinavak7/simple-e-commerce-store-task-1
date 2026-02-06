@@ -1,0 +1,175 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-implement-user-authentication-using-internet-identity-on-the-frontend-and-use-the-authenticated-principal-on-the-backend-to-associate-carts-and-orders-with-a-user-no-third-party-auth-providers",
+      "featureTitle": "Implement user authentication using Internet Identity on the frontend and use the authenticated principal on the backend to associate carts and orders with a user (no third-party auth providers).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/auth/LoginButton.tsx",
+        "frontend/src/components/auth/ProfileSetupModal.tsx",
+        "frontend/src/components/auth/RequireAuth.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-storefront-ui-with-a-product-listings-page-that-displays-products-from-the-backend-including-basic-sorting-or-filtering-controls-e-g-by-price-or-name-and-a-link-to-each-product-s-details-page",
+      "featureTitle": "Create a storefront UI with a product listings page that displays products from the backend, including basic sorting or filtering controls (e.g., by price or name) and a link to each product’s details page.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/products/ProductCard.tsx",
+        "frontend/src/pages/ProductListPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-product-details-page-that-loads-a-product-by-id-from-the-backend-and-allows-adding-the-product-to-the-shopping-cart-with-a-chosen-quantity",
+      "featureTitle": "Create a product details page that loads a product by ID from the backend and allows adding the product to the shopping cart with a chosen quantity.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/ProductDetailsPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-shopping-cart-ui-that-supports-viewing-cart-items-updating-quantities-removing-items-and-showing-an-order-summary-subtotal-and-total-cart-state-must-be-persisted-via-the-backend-per-authenticated-user",
+      "featureTitle": "Implement a shopping cart UI that supports viewing cart items, updating quantities, removing items, and showing an order summary (subtotal and total). Cart state must be persisted via the backend per authenticated user.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/cart/CartItemRow.tsx",
+        "frontend/src/pages/CartPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-checkout-and-order-processing-flow-that-creates-an-order-record-in-the-backend-from-the-current-cart-clears-the-cart-on-success-and-presents-an-order-confirmation-view-with-order-id-and-summary",
+      "featureTitle": "Implement a checkout and order processing flow that creates an order record in the backend from the current cart, clears the cart on success, and presents an order confirmation view with order ID and summary.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/CheckoutPage.tsx",
+        "frontend/src/pages/OrderConfirmationPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-an-account-area-where-a-logged-in-user-can-view-their-past-orders-order-list-and-open-an-order-detail-view-showing-line-items-totals-and-timestamps",
+      "featureTitle": "Add an account area where a logged-in user can view their past orders (order list) and open an order detail view showing line items, totals, and timestamps.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/AccountOrdersPage.tsx",
+        "frontend/src/pages/OrderDetailsPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-cohesive-visual-theme-across-the-frontend-typography-spacing-color-system-component-styling-suitable-for-a-modern-minimal-online-store-avoid-blue-purple-as-primary-brand-colors",
+      "featureTitle": "Apply a cohesive visual theme across the frontend (typography, spacing, color system, component styling) suitable for a modern minimal online store; avoid blue/purple as primary brand colors.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/layout/StoreLayout.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-generated-static-image-assets-logo-hero-banner-and-a-reusable-product-placeholder-into-frontend-public-assets-generated-and-wire-them-into-the-ui-where-appropriate-header-landing-listing-placeholders",
+      "featureTitle": "Add generated static image assets (logo, hero/banner, and a reusable product placeholder) into frontend/public/assets/generated and wire them into the UI where appropriate (header/landing/listing placeholders).",
+      "files": [
+        "frontend/src/components/layout/Header.tsx",
+        "frontend/src/components/products/ProductCard.tsx",
+        "frontend/src/pages/ProductDetailsPage.tsx",
+        "frontend/src/pages/ProductListPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

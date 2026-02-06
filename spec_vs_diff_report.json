@@ -1,0 +1,106 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-06T07:22:09.363Z",
+  "summary": "The diff adds a Motoko backend actor and a React+TS frontend with routing, Internet Identity auth hooks/components, cart/checkout/orders pages, and a warm neutral Tailwind theme. However, the backend seeding appears to include only a single product (not the required 6+), and the backend product model uses `title` instead of the required `name`. Some requested assets/features cannot be confirmed due to truncation/omitted files.",
+  "missing_requirements": [
+    {
+      "id": "REQ-2",
+      "requirement": "Seed at least 6 products on fresh deploy so the UI can be demonstrated without manual entry.",
+      "reason": "The backend shows only a single seeded product using `Map.singleton`.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "requirement": "Each product has: id, name, price, description, and an image URL/path field.",
+      "reason": "The backend `Product` type uses `title` instead of `name`, so the specified field set is not implemented as requested.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "requirement": "Product listings page includes basic sorting or filtering controls (e.g., by price or name).",
+      "reason": "No evidence of sorting/filtering controls is present in the provided diff summary; the `ProductListPage` implementation is not shown.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "requirement": "Generated images exist under frontend/public/assets/generated with the specified filenames.",
+      "reason": "UI references the generated asset paths, but the diff summary does not show the actual image files under `frontend/public/assets/generated` (likely omitted as non-LLM-readable/binary).",
+      "evidence": [
+        "frontend/src/components/layout/Header.tsx",
+        "frontend/src/components/products/ProductCard.tsx",
+        "frontend/src/components/cart/CartItemRow.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Custom access control/authorization system with admin secret initialization (`_initializeAccessControlWithSecret`), permissions, and admin checks.",
+      "reason": "The BuildRequest only requires Internet Identity authentication and scoping carts/orders by principal; it does not request an additional access-control subsystem or admin token mechanism.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/hooks/useActor.ts"
+      ]
+    },
+    {
+      "description": "User profile feature (profile storage and a 'ProfileSetupModal' prompting for a name).",
+      "reason": "User profiles are not part of the requested e-commerce scope (products/cart/checkout/orders/auth).",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/components/auth/ProfileSetupModal.tsx"
+      ]
+    },
+    {
+      "description": "Footer attribution/link to caffeine.ai.",
+      "reason": "Not requested by the BuildRequest.",
+      "evidence": [
+        "frontend/src/components/layout/Footer.tsx"
+      ]
+    },
+    {
+      "description": "Product model includes `stock` and `createdAt` and provides `compareByCreatedAt` helper.",
+      "reason": "Not requested in the product requirements (only id, name, price, description, image URL/path were specified).",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "confidence": 0.64,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/auth/LoginButton.tsx",
+    "frontend/src/components/auth/ProfileSetupModal.tsx",
+    "frontend/src/components/auth/RequireAuth.tsx",
+    "frontend/src/components/cart/CartItemRow.tsx",
+    "frontend/src/components/layout/Footer.tsx",
+    "frontend/src/components/layout/Header.tsx",
+    "frontend/src/components/layout/StoreLayout.tsx",
+    "frontend/src/components/products/ProductCard.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/AccountOrdersPage.tsx",
+    "frontend/src/pages/CartPage.tsx",
+    "frontend/src/pages/CheckoutPage.tsx",
+    "frontend/src/pages/OrderConfirmationPage.tsx",
+    "frontend/src/pages/OrderDetailsPage.tsx",
+    "frontend/src/pages/ProductDetailsPage.tsx",
+    "frontend/src/pages/ProductListPage.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}
